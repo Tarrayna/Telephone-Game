@@ -4,8 +4,9 @@ block styles
 
 block content
   .menuContainer
-    h1= title
-    p Testing the landing page
+    h2.errorMessage(hidden=true) #{error}
+    h1.welcomeHeader= title
+    p.gameDescription A drawing game just like telephone!
     button.startNewGame#startNewGame-btn(type='button') Start New Game
     form.gameID-form(action="/", method="POST")
       .form-control
