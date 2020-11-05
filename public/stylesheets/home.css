@@ -35,6 +35,7 @@ button:hover{
     height: 2rem;
     width: 2rem;
     background-image: url("../images/right-arrow.svg") ;
+    vertical-align: .62rem;
 }
 .startNewGame{
     background-color: mediumaquamarine;
