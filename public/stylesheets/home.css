@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap');
+
+.menuContainer{
+    font: 3rem "Annie Use Your Telescope", Helvetica, Arial, sans-serif;
+    font-weight: 555;
+    width: -webkit-fill-available;
+    max-width: 900px;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    box-shadow: 0 10px 10px 10px rgba(0,0,0,0.2);
+}
+.game-ID-block
+{
+    justify-content: center;
+    clear: both;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+}
+button{
+    font: 3rem "Annie Use Your Telescope", Helvetica, Arial, sans-serif;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    border-radius: 10px ;
+    background-color: whitesmoke;
+    padding: 1.55rem;
+}
+button:active,
+button:hover{
+    background-color: teal;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px 10px rgba(0,0,0,0.1);
+}
+.submitID{
+    height: 2rem;
+    width: 2rem;
+    background-image: url("../images/right-arrow.svg") ;
+}
+.startNewGame{
+    background-color: mediumaquamarine;
+}
+
+.form-control input{
+    width: 300px;
+    margin: 5px;
+    font-size: large;
+    font: 2rem "Annie Use Your Telescope", Helvetica, Arial, sans-serif;
+}
+.form-control label{
+    vertical-align: sub;
+    font-size: 4.4rem;
+}
