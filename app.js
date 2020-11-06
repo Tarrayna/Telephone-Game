@@ -1,17 +1,17 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var flash = require('connect-flash')
-var session = require('express-session')
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const flash = require('connect-flash')
+const session = require('express-session')
 
 //ROUTES
-var indexRouter = require('./routes/index');
-var userLobbyRouter = require('./routes/joinLobby')
+const indexRouter = require('./routes/index');
+const userLobbyRouter = require('./routes/joinLobby')
 
 //Init Express
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -24,7 +24,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use(flash())
-app.use(session({secret: 'TarraynaAndNicholas', resave:false, saveUninitialized:false}))
+app.use(session({secret: 'Tarrayna+Nicholas', resave:false, saveUninitialized:false}))
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public/javascripts')));

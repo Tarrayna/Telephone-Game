@@ -1,13 +1,10 @@
 const generalController = require('../controllers/generalControllers');
 
-var express = require('express');
-var router = express.Router();
-
-//Get Error Page. Probably good to delete TODO: Delete this
-router.get('/', generalController.getInvalidKey);
+const express = require('express');
+const router = express.Router();
 
 //Get Home Page
-router.post('/', generalController.getMainMenu);
+router.get('/', generalController.getMainMenu);
 
 module.exports = router;
 

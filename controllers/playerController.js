@@ -7,19 +7,24 @@ const roomData = require('../models/createRoom');
 //POST
 exports.postPlayerLobby = (req,res) =>
 {
-    console.log(roomData.activeRooms)
     console.log(req.body)
-
     //Check if room key is valid
-    if(roomData.activeRooms.get(req.body.roomKey))
+    console.log("New ROOM: " + req.body.newGameBtn)
+    console.log('Old room: ' + req.body.roomKey)
+    if(roomData.activeRooms.has(req.body.roomKey))
     {
         console.log("Room Exists")
-        res.render('playerLobby', {title: 'Welcome to The Lobby', errorMessage:req.flash('error')});
+        res.render('playerLobby', {title: 'Welcome to The Lobby'});
+    }
+    else if(req.body.newGameBtn){
+        res.render('hostLobby', {title: 'Welcome to The Lobby'});
     }
     else{
         console.log("Room Does No Exist")
         //Error Room Key Not Valid
-        req.flash('error', 'Invalid Room Code')
+        //TODO:Remove key when done debugging
+        const getAKeyForTesting = roomData.activeRooms.keys().next().value;
+        req.flash('error', `Invalid Room Code try ${getAKeyForTesting}`)
         return res.redirect('/')
     }
 
