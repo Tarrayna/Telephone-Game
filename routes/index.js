@@ -1,18 +1,19 @@
+const generalController = require('../controllers/generalControllers');
+
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res) {
-  res.render('index', { title: 'Welcome' , error: "Room Key Is Invalid"});
-});
+//Get Error Page. Probably good to delete TODO: Delete this
+router.get('/', generalController.getInvalidKey);
 
-router.post('/', function(req, res) {
-  console.log(req.body)
-  if(req.body.action === 'createNewRoom')
-  {
-    console.log("Create New Room")
-  }
-  res.render('index', { title: 'Welcome'});
-});
+//Get Home Page
+router.post('/', generalController.getMainMenu);
 
 module.exports = router;
+
+
+
+
+
+
+

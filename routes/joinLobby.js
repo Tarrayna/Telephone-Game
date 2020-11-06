@@ -1,16 +1,17 @@
+const hostController = require('../controllers/hostController');
+const playerController = require('../controllers/playerController');
+
 var express = require('express');
 var router = express.Router();
 
-// GET player lobby listing.
-router.get('/player', function(req, res, next) {
-    res.render('playerLobby', { title: 'Welcome to The Lobby' });
-});
+const fs = require('fs')
+const path = require('path');
 
-// GET host player listing.
-router.get('/host', function(req, res, next) {
-    res.send('respond with a resource');
-    //res.render('playerLobby', { title: 'Welcome to The Lobby' });
-});
+// GET host listing
+router.get("/", hostController.getHostLobby);
+
+// POST player listing.
+router.post('/',playerController.postPlayerLobby);
 
 
 module.exports = router;

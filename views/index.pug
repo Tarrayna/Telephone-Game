@@ -4,13 +4,13 @@ block styles
 
 block content
   .menuContainer
-    h2.errorMessage(hidden=true) #{error}
+    h2.errorMessage#errorMessage #{errorMessage}
     h1.welcomeHeader= title
     p.gameDescription A drawing game just like telephone!
-    button.startNewGame#startNewGame-btn(type='button') Start New Game
-    form.gameID-form(action="/", method="POST")
+    button.startNewGame#startNewGame-btn(type='button', formmethod="GET", formaction="/lobby") Start New Game
+    form.gameID-form(action="/lobby", method="POST")
       .form-control
-        label(for="title") Room Key:
-        input(type="text", name="title", formaction="/join/lobby")#title
+        label(for="roomKey") Room Key:
+        input(type="text", name="roomKey", formaction="/lobby")#roomKey
         button.submitID#submitButton(type="submit")
   script(type="text/javascript", src="/javascripts/mainScreen.js")

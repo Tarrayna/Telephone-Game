@@ -1,13 +1,6 @@
-extends layout
+extends templates/lobbyTemplate
+block styles
+    link(rel="stylesheet", href="/stylesheets/home.css")
 
 block content
-    link(rel="stylesheet", href="/stylesheets/style.css")
-    link(rel="stylesheet", href="/stylesheets/home.css")
-    h1= title
-    p Testing the landing page
-    button.startNewGame#startNewGame(type='button') Start New Game
-    form.gameID-form(action="/", method="POST")
-        .form-control
-            label(for="title") Room Key:
-            input(type="text", name="title", formaction="/join/lobby")#title
-            button.submitID#submitButton(type="submit")
+    h1 Player Lobby

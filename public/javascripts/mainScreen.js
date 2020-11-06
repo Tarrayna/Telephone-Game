@@ -1,4 +1,17 @@
-const newGameButton = document.getElementById('startNewGame-btn')
+const errorMessage = document.getElementById('errorMessage')
+var body = XMLHttpRequest.response;
+
+const setError = ()=>
+{
+    errorMessage.hidden = false;
+}
+
+function doThings(){
+    console.log("Do Things")
+    errorMessage.hidden = false;
+}
+
+body.addEventListener('')
 
 
 newGameButton.addEventListener('click', async _ =>

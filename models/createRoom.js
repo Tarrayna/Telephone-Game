@@ -1,5 +1,6 @@
 //variables
-const activeRooms = new Map();
+const activeRoomsMap = new Map();
+exports.activeRooms = activeRoomsMap;
 
 //Room Class
 class CreateRoom{
@@ -10,12 +11,12 @@ class CreateRoom{
         this.playerList = new Set();
 
         console.log(this.roomKey)
-        while(activeRooms.get(this.roomKey) !== undefined)
+        while(activeRoomsMap.get(this.roomKey) !== undefined)
         {
             this.roomKey = generateKey();
         }
         //Add newly created room to room map
-        activeRooms.set(this.roomKey, this)
+        activeRoomsMap.set(this.roomKey, this)
 
         //Adding Default Settings
         this.playerCount = 8;
@@ -44,8 +45,15 @@ function generateKey(){
 //removes room
 function removeRoom(key)
 {
-    activeRooms.delete(key)
+    activeRoomsMap.delete(key)
 }
 
+const room1 = new CreateRoom();
+const room2 = new CreateRoom();
+const room3 = new CreateRoom();
 
+//TODO: Remove this when done debugging
+activeRoomsMap.set(room1.getKey(), room1)
+activeRoomsMap.set(room2.getKey(), room2)
+activeRoomsMap.set(room2.getKey(), room2)
 
