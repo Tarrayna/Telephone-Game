@@ -1,2 +1,8 @@
 extends ../layout
+block styles
+    link(rel="stylesheet", href="/stylesheets/lobby.css")
 
+block content
+    .returnToMenu
+        form.returnToMainMenuForm(action="/", method="POST")
+            button.returnToMainMenuBTN#returnToMainMenuBTN(type='submit', name='returnToMainMenuBTN' value ='true') Return To Main Screen

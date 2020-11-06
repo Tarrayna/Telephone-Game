@@ -18,20 +18,7 @@
     overflow: hidden;
     white-space: nowrap;
 }
-button{
-    font: 3rem "Annie Use Your Telescope", Helvetica, Arial, sans-serif;
-    font-size: 2rem;
-    margin-bottom: 3rem;
-    border-radius: 10px ;
-    background-color: whitesmoke;
-    padding: 1.25rem;
-}
-button:active,
-button:hover{
-    background-color: teal;
-    border-radius: 10px;
-    box-shadow: 0 10px 10px 10px rgba(0,0,0,0.1);
-}
+
 .submitID{
     height: 2rem;
     width: 2rem;
