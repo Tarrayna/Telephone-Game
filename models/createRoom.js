@@ -33,6 +33,9 @@ class CreateRoom{
     getPlayerCount(){
         return this.playerCount;
     }
+    createRoom (){
+        return new CreateRoom();
+    }
 
 }
 
@@ -57,3 +60,5 @@ activeRoomsMap.set(room1.getKey(), room1)
 activeRoomsMap.set(room2.getKey(), room2)
 activeRoomsMap.set(room2.getKey(), room2)
 
+//Exports
+exports.CreateRoom = CreateRoom
