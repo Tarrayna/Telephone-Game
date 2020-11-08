@@ -3,7 +3,8 @@ block styles
     link(rel="stylesheet", href="/stylesheets/lobby.css")
 
 block content
-    .returnToMenu
+    .h1 #{title}
+    .returnToMenuContainer
         form.returnToMainMenuForm(action="/", method="POST")
             button.returnToMainMenuBTN#returnToMainMenuBTN(type='submit', name='returnToMainMenuBTN' value ='true') Return To Main Screen
-        .roomInfo Room Code: #{roomKey}
+    .roomInfo Room Code: #{roomKey}

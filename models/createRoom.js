@@ -3,16 +3,14 @@ const activeRoomsMap = new Map();
 exports.activeRooms = activeRoomsMap;
 
 //Room Class
-class CreateRoom{
-    constructor()
-    {
+class CreateRoom {
+    constructor() {
         //Ensure each game gets it's own key word
         this.roomKey = generateKey();
         this.playerList = new Set();
 
         console.log(this.roomKey)
-        while(activeRoomsMap.get(this.roomKey) !== undefined)
-        {
+        while (activeRoomsMap.get(this.roomKey) !== undefined) {
             this.roomKey = generateKey();
         }
         //Add newly created room to room map
@@ -20,20 +18,24 @@ class CreateRoom{
 
         //Adding Default Settings
         this.playerCount = 8;
-        this.numberRounds = Math.round(this.playerCount/2);
+        this.numberRounds = Math.round(this.playerCount / 2);
         this.drawTimer = 60;
         this.guessTimer = 30;
         //TODO: Word bank list.
         //TODO: Black List Players
         //TODO:Some type of host tracker
+        console.log(activeRoomsMap)
     }
-    getKey(){
-    return this.roomKey;
+
+    getKey() {
+        return this.roomKey;
     }
-    getPlayerCount(){
+
+    getPlayerCount() {
         return this.playerCount;
     }
-    createRoom (){
+
+    createRoom() {
         return new CreateRoom();
     }
 
@@ -41,13 +43,13 @@ class CreateRoom{
 
 //generates room keys. Use format: const {token} = require("morgan")
 const crypto = require('crypto')
-function generateKey(){
+
+function generateKey() {
     return crypto.randomBytes(4).toString('hex')
 }
 
 //removes room
-function removeRoom(key)
-{
+function removeRoom(key) {
     activeRoomsMap.delete(key)
 }
 

@@ -15,12 +15,12 @@ exports.postPlayerLobby = (req,res) =>
     if(roomData.activeRooms.has(roomKey))
     {
         console.log("Room Exists")
-        res.render('playerLobby', {title: 'Welcome to The Lobby', roomKey: roomKey});
+        res.render('playerLobby', {title: 'Player Lobby', roomKey: roomKey});
     }
     else if(req.body.newGameBtn){
         const newRoom = new roomData.CreateRoom();
         roomData.activeRooms.set(newRoom.getKey(), newRoom);
-        res.render('hostLobby', {title: 'Welcome to The Lobby', roomKey: newRoom.getKey()});
+        res.render('hostLobby', {title: 'Host Lobby', roomKey: newRoom.getKey()});
     }
     else{
         console.log("Room Does No Exist")

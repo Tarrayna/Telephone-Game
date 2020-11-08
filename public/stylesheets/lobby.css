@@ -1,3 +1,21 @@
+.returnToMenuContainer{
+    position: relative;
+    top: 300px;
+    left: 500px;
+}
+
+.h1 {
+    position: absolute;
+    color: #2a8062;
+    top:15px
+}
+
+.roomInfo {
+    position: absolute;
+    color: #2a8062;
+    top:90px;
+}
+
 .returnToMainMenuBTN{
     font-size: 2rem;
     background-color: mediumaquamarine;
