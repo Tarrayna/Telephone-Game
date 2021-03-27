@@ -45,7 +45,7 @@ class CreateRoom {
 const crypto = require('crypto')
 
 function generateKey() {
-    return crypto.randomBytes(4).toString('hex')
+    return crypto.randomBytes(4).toString('hex').toUpperCase();
 }
 
 //removes room

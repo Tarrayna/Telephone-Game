@@ -10,7 +10,7 @@ exports.postPlayerLobby = (req,res) =>
     console.log(req.body)
     //Check if room key is valid
     console.log("New ROOM: " + req.body.newGameBtn)
-    const roomKey = req.body.roomKey;
+    const roomKey = JSON.stringify(req.body.roomKey);
     console.log('Old room: ' + roomKey)
     if(roomData.activeRooms.has(roomKey))
     {
